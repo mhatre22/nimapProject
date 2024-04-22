@@ -7,12 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserregisterComponent } from './userregister/userregister.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {Component} from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatSliderModule} from '@angular/material/slider';
-import {MatCheckboxModule} from '@angular/material/checkbox';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
@@ -28,10 +24,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,MatCheckboxModule,
+    ReactiveFormsModule,
     
     ReactiveFormsModule,
-  
+  MatSliderModule,
     BrowserAnimationsModule,
   ],
   exports:[
