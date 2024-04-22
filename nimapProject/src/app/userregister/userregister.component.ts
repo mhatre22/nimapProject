@@ -8,6 +8,7 @@ import { FormGroup, FormControl,FormBuilder,Validators } from '@angular/forms';
   styleUrls: ['./userregister.component.css']
 })
 export class UserregisterComponent {
+ 
   RegisterForm!: FormGroup;
   submitted = false;
 
@@ -26,4 +27,10 @@ export class UserregisterComponent {
       }),
     });
   }
+  getImage(eve:any) {
+    console.log(eve.target.files[0]);
+ }
+
+ 
 }
+
