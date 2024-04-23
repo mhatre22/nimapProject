@@ -1,124 +1,152 @@
+<!-- Button trigger modal -->
 <div class="homecontent">
-    <h1>Find Your Career. You Deserve It....</h1>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</button>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <h1 class="home">Find Your Career.You Deserve It.....</h1>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Register
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">User Registration</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-            <form class="register-form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-                <img src="assets/images/img.jpg" alt="" class="image-exercise" (click)="selectFile.click()">
-                <input type="file" (change)="getImage($event)" style="display: none" #selectFile><br>
-                
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                            <label class="form-label" for="firstName">First name</label>
-                            <input type="text" id="firstName" class="form-control form-control-lg" formControlName="firstName">
-                            <div class="err" *ngIf="registrationForm.get('firstName').invalid && (registrationForm.get('firstName').dirty || registrationForm.get('firstName').touched)">
-                                <div *ngIf="registrationForm.get('firstName').errors?.['required']">First Name is required</div>
-                                <div *ngIf="registrationForm.get('firstName').errors?.['minlength']">First Name must be at least 3 characters</div>
+      <div class="modal-content">
+        <div class="modal-header">
+            <section class="h-100 bg-dark">
+                <div class="container py-5 h-100">
+                  <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col">
+                      <div class="card card-registration my-4">
+                        <div class="row g-0">
+                          <div class="col-xl-6 d-none d-xl-block">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                              alt="Sample photo" class="img-fluid"
+                              style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                          </div>
+                          <div class="col-xl-6">
+                            <div class="card-body p-md-5 text-black">
+                              <h3 class="mb-5 text-uppercase">Student registration form</h3>
+              
+                              <div class="row">
+                                <div class="col-md-6 mb-4">
+                                  <div data-mdb-input-init class="form-outline">
+                                    <input type="text" id="form3Example1m" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form3Example1m">First name</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                  <div data-mdb-input-init class="form-outline">
+                                    <input type="text" id="form3Example1n" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form3Example1n">Last name</label>
+                                  </div>
+                                </div>
+                              </div>
+              
+                              <div class="row">
+                                <div class="col-md-6 mb-4">
+                                  <div data-mdb-input-init class="form-outline">
+                                    <input type="text" id="form3Example1m1" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form3Example1m1">Mother's name</label>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                  <div data-mdb-input-init class="form-outline">
+                                    <input type="text" id="form3Example1n1" class="form-control form-control-lg" />
+                                    <label class="form-label" for="form3Example1n1">Father's name</label>
+                                  </div>
+                                </div>
+                              </div>
+              
+                              <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="text" id="form3Example8" class="form-control form-control-lg" />
+                                <label class="form-label" for="form3Example8">Address</label>
+                              </div>
+              
+                              <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+              
+                                <h6 class="mb-0 me-4">Gender: </h6>
+              
+                                <div class="form-check form-check-inline mb-0 me-4">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                                    value="option1" />
+                                  <label class="form-check-label" for="femaleGender">Female</label>
+                                </div>
+              
+                                <div class="form-check form-check-inline mb-0 me-4">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                                    value="option2" />
+                                  <label class="form-check-label" for="maleGender">Male</label>
+                                </div>
+              
+                                <div class="form-check form-check-inline mb-0">
+                                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+                                    value="option3" />
+                                  <label class="form-check-label" for="otherGender">Other</label>
+                                </div>
+              
+                              </div>
+              
+                              <div class="row">
+                                <div class="col-md-6 mb-4">
+              
+                                  <select data-mdb-select-init>
+                                    <option value="1">State</option>
+                                    <option value="2">Option 1</option>
+                                    <option value="3">Option 2</option>
+                                    <option value="4">Option 3</option>
+                                  </select>
+              
+                                </div>
+                                <div class="col-md-6 mb-4">
+              
+                                  <select data-mdb-select-init>
+                                    <option value="1">City</option>
+                                    <option value="2">Option 1</option>
+                                    <option value="3">Option 2</option>
+                                    <option value="4">Option 3</option>
+                                  </select>
+              
+                                </div>
+                              </div>
+              
+                              <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="text" id="form3Example9" class="form-control form-control-lg" />
+                                <label class="form-label" for="form3Example9">DOB</label>
+                              </div>
+              
+                              <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="text" id="form3Example90" class="form-control form-control-lg" />
+                                <label class="form-label" for="form3Example90">Pincode</label>
+                              </div>
+              
+                              <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="text" id="form3Example99" class="form-control form-control-lg" />
+                                <label class="form-label" for="form3Example99">Course</label>
+                              </div>
+              
+                              <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="text" id="form3Example97" class="form-control form-control-lg" />
+                                <label class="form-label" for="form3Example97">Email ID</label>
+                              </div>
+              
+                              <div class="d-flex justify-content-end pt-3">
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg">Reset all</button>
+                                <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-warning btn-lg ms-2">Submit form</button>
+                              </div>
+              
                             </div>
+                          </div>
                         </div>
+                      </div>
                     </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                            <label class="form-label" for="lastName">Last name</label>
-                            <input type="text" id="lastName" class="form-control form-control-lg" formControlName="lastName">
-                            <div class="err" *ngIf="registrationForm.get('lastName').invalid && (registrationForm.get('lastName').dirty || registrationForm.get('lastName').touched)">
-                                <div *ngIf="registrationForm.get('lastName').errors?.['required']">Last Name is required</div>
-                                <div *ngIf="registrationForm.get('lastName').errors?.['minlength']">Last Name must be at least 18 characters</div>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="emailId">EmailID</label>
-                    <input type="email" id="emailId" class="form-control form-control-lg" formControlName="emailId">
-                    <div class="err" *ngIf="registrationForm.get('emailId').invalid && (registrationForm.get('emailId').dirty || registrationForm.get('emailId').touched)">
-                        <div *ngIf="registrationForm.get('emailId').errors?.['required']">Email is required</div>
-                        <div *ngIf="registrationForm.get('emailId').errors?.['email']">Invalid email format</div>
-                    </div>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="age">Age</label>
-                    <mat-slider thumbLabel tickInterval="1" min="18" max="100" step="1" formControlName="age"></mat-slider>
-                    <div class="err" *ngIf="registrationForm.get('age').invalid && (registrationForm.get('age').dirty || registrationForm.get('age').touched)">
-                        <div *ngIf="registrationForm.get('age').errors?.['required']">Age is required</div>
-                        <div *ngIf="registrationForm.get('age').errors?.['min']">Age must be at least 18</div>
-                        <div *ngIf="registrationForm.get('age').errors?.['max']">Age cannot exceed 100</div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div>
-                            <label for="addressType">Address Type</label>
-                            <select id="addressType" formControlName="addressType">
-                                <option value="">Select Address Type</option>
-                                <option value="home">Home</option>
-                                <option value="company">Company</option>
-                            </select>
-                            <div class="err" *ngIf="registrationForm.get('addressType').invalid && (registrationForm.get('addressType').dirty || registrationForm.get('addressType').touched)">
-                                <div *ngIf="registrationForm.get('addressType').errors?.['required']">Address Type is required</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div>
-                            <label for="address">Address</label>
-                            <input type="text" id="address" class="form-control form-control-lg" formControlName="address">
-                            <div class="err" *ngIf="registrationForm.get('address').invalid && (registrationForm.get('address').dirty || registrationForm.get('address').touched)">
-                                <div *ngIf="registrationForm.get('address').errors?.['required']">Address is required</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div>
-                            <label for="country">Country:</label>
-                            <select id="country" formControlName="country">
-                                <option value="">Select Country</option>
-                                <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
-                            </select>
-                            <div class="err" *ngIf="registrationForm.get('country').invalid && (registrationForm.get('country').dirty || registrationForm.get('country').touched)">
-                                <div *ngIf="registrationForm.get('country').errors?.['required']">Country is required</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div>
-                            <label for="state">State:</label>
-                            <select id="state" formControlName="state">
-                                <option value="">Select State</option>
-                                <option *ngFor="let state of states" [value]="state">{{ state }}</option>
-                            </select>
-                            <div class="err" *ngIf="registrationForm.get('state').invalid && (registrationForm.get('state').dirty || registrationForm.get('state').touched)">
-                                <div *ngIf="registrationForm.get('state').errors?.['required']">State is required</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-end pt-3">
-                    <button type="reset" class="btn btn-light btn-lg">Reset</button>
-                    <button type="submit" class="btn btn-warning btn-lg ms-2" [disabled]="!registrationForm.valid">Submit</button>
-                </div>
-            </form>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
+              </section>
+        
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

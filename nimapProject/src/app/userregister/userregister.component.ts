@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup,FormBuilder,Validators , } from '@angular/forms';
+import { FormGroup,FormBuilder,Validators ,} from '@angular/forms';
 
 
 @Component({
@@ -12,31 +12,26 @@ export class UserregisterComponent {
   state: string[] =['Maharashtra','Gujrat','Goa','Sambhajinagar','Gondiya','Gadchiroli','Nashik'];
   registrationForm!: FormGroup;
   submitted = false;
+ 
 
-  constructor(private formBuilder: FormBuilder) { }
-
-  ngOnInit() {
-    this.registrationForm= this.formBuilder.group({
-      firstName: ['', [Validators.required, Validators.minLength(10)]],
-      lastName: ['', [Validators.required, Validators.minLength(18)]],
-        emailId: ['', [Validators.required, Validators.email]],
-        age: [18, [Validators.required, Validators.min(18), Validators.max(100)]],
-        addressType: ['', Validators.required],
-        address: ['', Validators.required],
-        country: ['', Validators.required] ,
-        State:['',Validators.required]
-      })
+ 
+    
+  
+    constructor(private fb: FormBuilder) {}
+  
+    ngOnInit():void {
+      this.registrationForm = this.fb.group({
+        firstName: ['', Validators.required],
+        lastName: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        // Add more fields with required validation as needed
+      });
+    }
+  
+    onSubmit() {
+      if (this.registrationForm.valid) {
+        console.log(this.registrationForm.value);
+        // Handle form submission
+      }
+    }
   }
-  getImage(eve:any) {
-    console.log(eve.target.files[0]);
- }
- Submit() {
-  if (this.registrationForm.valid) {
-    console.log('Register successfully!');
-    console.log(this.registrationForm.value);
-  } else {
-    console.log('Enter Valid details!!');
-  }
-
-}
-}
